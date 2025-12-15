@@ -111,16 +111,18 @@ function HighlightCard({
 
   return (
     <div
-      className={`group relative rounded-2xl border ${styles.border} bg-gradient-to-br ${styles.gradient} backdrop-blur-xl overflow-hidden transition-all duration-500 ${isHovered ? styles.glow : ''}`}
+      className={`group relative rounded-xl sm:rounded-2xl border ${styles.border} bg-gradient-to-br ${styles.gradient} backdrop-blur-xl overflow-hidden transition-all duration-500 ${isHovered ? styles.glow : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="p-6 md:p-8 text-center">
-        <div className={`inline-flex p-4 rounded-2xl bg-background/30 ${styles.text} mb-4 group-hover:scale-110 transition-transform duration-300`}>
-          {icon}
+      <div className="p-5 sm:p-6 md:p-8 text-center">
+        <div className={`inline-flex p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-background/30 ${styles.text} mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}>
+          <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
+            {icon}
+          </div>
         </div>
-        <h3 className={`text-3xl md:text-4xl font-bold ${styles.text} mb-2`}>{title}</h3>
-        <p className="text-sm text-text-muted font-mono">{subtitle}</p>
+        <h3 className={`text-2xl sm:text-3xl md:text-4xl font-bold ${styles.text} mb-1 sm:mb-2`}>{title}</h3>
+        <p className="text-xs sm:text-sm text-text-muted font-mono">{subtitle}</p>
       </div>
 
       {/* Shimmer */}
@@ -200,16 +202,16 @@ export function FunFactsSection() {
         </div>
 
         {/* Highlight Stats */}
-        <div className="max-w-6xl mx-auto px-6 mb-12">
-          <div className="grid md:grid-cols-2 gap-6">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8 sm:mb-12">
+          <div className="grid grid-cols-2 gap-3 sm:gap-6">
             <HighlightCard
-              icon={<GraduationCap className="w-10 h-10" />}
+              icon={<GraduationCap className="w-full h-full" />}
               title="UMich '25"
               subtitle="Information Science (UX + Data)"
               color="blue"
             />
             <HighlightCard
-              icon={<Coffee className="w-10 h-10" />}
+              icon={<Coffee className="w-full h-full" />}
               title="Ship Daily"
               subtitle="PRs > PRDs"
               color="green"
@@ -218,7 +220,7 @@ export function FunFactsSection() {
         </div>
 
         {/* Marquee Facts */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           <MarqueeRow facts={row1} speed={35} />
           <MarqueeRow facts={row2} reverse speed={40} />
         </div>

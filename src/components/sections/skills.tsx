@@ -37,7 +37,7 @@ function SkillPill({ skill, color, delay }: { skill: string; color: "green" | "b
   return (
     <span
       ref={ref}
-      className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-mono border backdrop-blur-sm transition-all duration-300 ${colorClasses} ${
+      className={`inline-flex items-center px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-mono border backdrop-blur-sm transition-all duration-300 ${colorClasses} ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
       style={{ transitionDelay: `${delay}ms` }}
@@ -70,23 +70,23 @@ function SkillCategoryCard({ category, index }: { category: SkillCategory; index
 
   return (
     <div
-      className={`group relative rounded-2xl border ${styles.border} ${styles.glow} bg-background/40 backdrop-blur-xl overflow-hidden transition-all duration-500`}
+      className={`group relative rounded-xl sm:rounded-2xl border ${styles.border} ${styles.glow} bg-background/40 backdrop-blur-xl overflow-hidden transition-all duration-500`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Header */}
-      <div className="p-6 pb-4">
-        <div className="flex items-center gap-4 mb-2">
-          <div className={`p-3 rounded-xl ${styles.iconBg} ${styles.icon} transition-transform duration-300 group-hover:scale-110`}>
+      <div className="p-4 sm:p-6 pb-3 sm:pb-4">
+        <div className="flex items-center gap-3 sm:gap-4 mb-2">
+          <div className={`p-2.5 sm:p-3 rounded-lg sm:rounded-xl ${styles.iconBg} ${styles.icon} transition-transform duration-300 group-hover:scale-110 flex-shrink-0`}>
             {category.icon}
           </div>
-          <h3 className="text-lg font-medium text-text-primary">{category.title}</h3>
+          <h3 className="text-base sm:text-lg font-medium text-text-primary">{category.title}</h3>
         </div>
       </div>
 
       {/* Skills cloud */}
-      <div className="px-6 pb-6">
-        <div className="flex flex-wrap gap-2">
+      <div className="px-4 sm:px-6 pb-4 sm:pb-6">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {category.skills.map((skill, i) => (
             <SkillPill
               key={skill}
@@ -104,7 +104,39 @@ function SkillCategoryCard({ category, index }: { category: SkillCategory; index
   )
 }
 
-// Central skill hub visualization
+// Central skill hub visualization - Mobile simplified version
+function MobileSkillHub() {
+  const coreSkills = ["Ship Fast", "Data-Driven", "User-First", "Full-Stack"]
+
+  return (
+    <div className="flex flex-wrap justify-center gap-2 py-6">
+      {/* Center badge */}
+      <div className="w-full flex justify-center mb-4">
+        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-dark via-green-medium to-blue-light p-[2px]">
+          <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
+            <div className="text-center">
+              <Terminal className="w-5 h-5 text-green-light mx-auto mb-1" />
+              <span className="text-[10px] font-mono text-text-muted">PM + DEV</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Core skills as badges */}
+      <div className="flex flex-wrap justify-center gap-2">
+        {coreSkills.map((skill) => (
+          <span
+            key={skill}
+            className="px-3 py-1.5 rounded-full bg-background/80 backdrop-blur-sm border border-green-medium/40 text-xs font-mono text-green-light"
+          >
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// Central skill hub visualization - Desktop version with orbits
 function SkillHub() {
   const [activeCategory, setActiveCategory] = useState<number | null>(null)
 
@@ -217,13 +249,18 @@ export function SkillsSection() {
           </p>
         </div>
 
-        {/* Visual Hub */}
+        {/* Visual Hub - Mobile */}
+        <div className="md:hidden mb-8">
+          <MobileSkillHub />
+        </div>
+
+        {/* Visual Hub - Desktop */}
         <div className="hidden md:block mb-16">
           <SkillHub />
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
           {skillCategories.map((category, index) => (
             <SkillCategoryCard key={category.title} category={category} index={index} />
           ))}

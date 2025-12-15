@@ -18,7 +18,7 @@ function CopyButton({ text, label }: { text: string; label: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="group flex items-center gap-2 text-text-muted hover:text-green-light transition-colors"
+      className="group flex items-center gap-2 text-text-muted hover:text-green-light transition-colors min-h-[44px] min-w-[44px] px-2 -mr-2 rounded-lg hover:bg-white/5"
       title={`Copy ${label}`}
     >
       {copied ? (
@@ -29,7 +29,7 @@ function CopyButton({ text, label }: { text: string; label: string }) {
       ) : (
         <>
           <Copy className="w-4 h-4" />
-          <span className="text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity">Copy</span>
+          <span className="text-xs font-mono opacity-0 group-hover:opacity-100 transition-opacity hidden sm:inline">Copy</span>
         </>
       )}
     </button>
@@ -53,9 +53,9 @@ function SocialLink({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex items-center gap-4 p-4 rounded-xl border border-green-medium/30 bg-background/40 backdrop-blur-sm hover:border-green-light/50 hover:bg-green-dark/10 transition-all duration-300"
+      className="group flex items-center gap-3 sm:gap-4 p-3 sm:p-4 rounded-xl border border-green-medium/30 bg-background/40 backdrop-blur-sm hover:border-green-light/50 hover:bg-green-dark/10 transition-all duration-300 min-h-[60px]"
     >
-      <div className="p-3 rounded-xl bg-green-dark/30 text-green-light group-hover:scale-110 transition-transform duration-300">
+      <div className="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-green-dark/30 text-green-light group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
         {icon}
       </div>
       <div className="flex-1 min-w-0">
@@ -64,14 +64,14 @@ function SocialLink({
         </div>
         <div className="text-xs font-mono text-text-muted truncate">{username}</div>
       </div>
-      <ExternalLink className="w-4 h-4 text-text-muted opacity-0 group-hover:opacity-100 group-hover:text-green-light transition-all" />
+      <ExternalLink className="w-4 h-4 text-text-muted sm:opacity-0 group-hover:opacity-100 group-hover:text-green-light transition-all flex-shrink-0" />
     </a>
   )
 }
 
 export function ContactSection() {
   return (
-    <section className="relative py-24 md:py-32 overflow-hidden" id="contact">
+    <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden" id="contact">
       <TechBackground variant="primary" />
 
       <GradualBlur
@@ -84,59 +84,59 @@ export function ContactSection() {
         duration="0.8s"
       />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6">
         {/* Main card */}
-        <div className="relative rounded-3xl border border-green-medium/40 bg-background/60 backdrop-blur-2xl overflow-hidden">
+        <div className="relative rounded-2xl sm:rounded-3xl border border-green-medium/40 bg-background/60 backdrop-blur-2xl overflow-hidden">
           {/* Gradient glow behind */}
           <div className="absolute -inset-1 bg-gradient-to-r from-green-dark/30 via-green-medium/20 to-blue-medium/30 blur-2xl opacity-50" />
 
-          <div className="relative p-8 md:p-12 lg:p-16">
+          <div className="relative p-5 sm:p-8 md:p-12 lg:p-16">
             {/* Header */}
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 mb-6 px-4 py-2 rounded-full border border-green-medium/30 bg-green-dark/20">
-                <Send className="w-4 h-4 text-green-light" />
-                <span className="text-sm font-mono text-green-light">Get In Touch</span>
+            <div className="text-center mb-8 sm:mb-12">
+              <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-green-medium/30 bg-green-dark/20">
+                <Send className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-light" />
+                <span className="text-xs sm:text-sm font-mono text-green-light">Get In Touch</span>
               </div>
 
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4">
                 <span className="text-gradient-green">Let's Build</span>
               </h2>
-              <p className="text-lg text-text-secondary max-w-xl mx-auto">
+              <p className="text-sm sm:text-base lg:text-lg text-text-secondary max-w-xl mx-auto px-2">
                 I'm always down to chat about AI products, terrible LLM outputs, or why your chatbot is broken.
               </p>
             </div>
 
             {/* Contact info grid */}
-            <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
               {/* Email */}
-              <div className="group p-6 rounded-2xl border border-blue-light/30 bg-background/40 backdrop-blur-sm hover:border-blue-light/50 transition-all duration-300">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-blue-medium/30 text-blue-light group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="w-6 h-6" />
+              <div className="group p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-blue-light/30 bg-background/40 backdrop-blur-sm hover:border-blue-light/50 transition-all duration-300">
+                <div className="flex items-start justify-between mb-3 sm:mb-4">
+                  <div className="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-blue-medium/30 text-blue-light group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <CopyButton text="oliveren@umich.edu" label="email" />
                 </div>
-                <div className="text-sm font-mono text-text-muted mb-1">Email</div>
+                <div className="text-xs sm:text-sm font-mono text-text-muted mb-1">Email</div>
                 <a
                   href="mailto:oliveren@umich.edu"
-                  className="text-lg text-text-primary hover:text-blue-light transition-colors"
+                  className="text-base sm:text-lg text-text-primary hover:text-blue-light transition-colors break-all sm:break-normal"
                 >
                   oliveren@umich.edu
                 </a>
               </div>
 
               {/* Phone */}
-              <div className="group p-6 rounded-2xl border border-green-medium/30 bg-background/40 backdrop-blur-sm hover:border-green-light/50 transition-all duration-300">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 rounded-xl bg-green-dark/30 text-green-light group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="w-6 h-6" />
+              <div className="group p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-green-medium/30 bg-background/40 backdrop-blur-sm hover:border-green-light/50 transition-all duration-300">
+                <div className="flex items-start justify-between mb-3 sm:mb-4">
+                  <div className="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-green-dark/30 text-green-light group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <CopyButton text="7314443702" label="phone" />
                 </div>
-                <div className="text-sm font-mono text-text-muted mb-1">Phone</div>
+                <div className="text-xs sm:text-sm font-mono text-text-muted mb-1">Phone</div>
                 <a
                   href="tel:7314443702"
-                  className="text-lg text-text-primary hover:text-green-light transition-colors"
+                  className="text-base sm:text-lg text-text-primary hover:text-green-light transition-colors"
                 >
                   (731) 444-3702
                 </a>
@@ -144,7 +144,7 @@ export function ContactSection() {
             </div>
 
             {/* Social links */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-12">
               <SocialLink
                 href="https://linkedin.com/in/yourprofile"
                 icon={
@@ -170,17 +170,17 @@ export function ContactSection() {
             {/* Location */}
             <div className="flex items-center justify-center gap-2 text-text-muted">
               <MapPin className="w-4 h-4" />
-              <span className="text-sm font-mono">Ann Arbor, MI / Open to Remote</span>
+              <span className="text-xs sm:text-sm font-mono">Ann Arbor, MI / Open to Remote</span>
             </div>
           </div>
         </div>
 
         {/* Footer */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-text-muted font-mono">
+        <div className="mt-8 sm:mt-12 text-center px-4">
+          <p className="text-xs sm:text-sm text-text-muted font-mono">
             Built with Claude Code, coffee, and questionable life choices
           </p>
-          <p className="text-xs text-text-muted/60 mt-2">
+          <p className="text-[10px] sm:text-xs text-text-muted/60 mt-2">
             &copy; 2025 Jialan Ren
           </p>
         </div>
