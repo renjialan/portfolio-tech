@@ -1,0 +1,113 @@
+.star-border-container {
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+
+.border-gradient-bottom,
+.border-gradient-top {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0.8;
+  filter: blur(1px);
+}
+
+.border-gradient-bottom {
+  bottom: 0;
+  left: 0;
+  animation: moveBottom linear infinite;
+}
+
+.border-gradient-top {
+  top: 0;
+  right: 0;
+  animation: moveTop linear infinite;
+}
+
+.inner-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  flex-direction: inherit;
+  gap: inherit;
+}
+
+@keyframes moveBottom {
+  0% {
+    bottom: 0;
+    left: 0;
+    transform: rotate(0deg);
+  }
+  25% {
+    bottom: 0;
+    left: calc(100% - 8px);
+    transform: rotate(90deg);
+  }
+  50% {
+    bottom: calc(100% - 8px);
+    left: calc(100% - 8px);
+    transform: rotate(180deg);
+  }
+  75% {
+    bottom: calc(100% - 8px);
+    left: 0;
+    transform: rotate(270deg);
+  }
+  100% {
+    bottom: 0;
+    left: 0;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveTop {
+  0% {
+    top: 0;
+    right: 0;
+    transform: rotate(180deg);
+  }
+  25% {
+    top: 0;
+    right: calc(100% - 8px);
+    transform: rotate(270deg);
+  }
+  50% {
+    top: calc(100% - 8px);
+    right: calc(100% - 8px);
+    transform: rotate(360deg);
+  }
+  75% {
+    top: calc(100% - 8px);
+    right: 0;
+    transform: rotate(450deg);
+  }
+  100% {
+    top: 0;
+    right: 0;
+    transform: rotate(540deg);
+  }
+}
+
+/* Hover effects */
+.star-border-container:hover .border-gradient-bottom,
+.star-border-container:hover .border-gradient-top {
+  opacity: 1;
+  filter: blur(0.5px);
+  animation-duration: 3s !important;
+}
+
+/* Glow effect on hover */
+.star-border-container:hover {
+  box-shadow: 
+    0 0 10px rgba(122, 229, 130, 0.3),
+    0 0 20px rgba(122, 229, 130, 0.2),
+    inset 0 0 10px rgba(122, 229, 130, 0.1);
+}

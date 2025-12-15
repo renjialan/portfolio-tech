@@ -1,0 +1,473 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary Green Shades */
+  --green-light: 159 255 203; /* #9FFFCB */
+  --green-medium: 122 229 130; /* #7AE582 */
+  --green-dark: 37 161 142; /* #25A18E */
+  
+  /* Secondary Blue Shades */
+  --blue-light: 0 165 207; /* #00A5CF */
+  --blue-medium: 0 78 100; /* #004E64 */
+  --blue-dark: 0 50 71; /* #003247 */
+  
+  /* Dark Mode Background Hierarchy */
+  --background: 8 8 12; /* #08080C */
+  --background-secondary: 12 12 16; /* #0C0C10 */
+  --background-tertiary: 16 16 20; /* #101014 */
+  
+  /* Text Colors */
+  --text-primary: 248 250 252; /* #F8FAFC */
+  --text-secondary: 203 213 225; /* #CBD5E1 */
+  --text-muted: 148 163 184; /* #94A3B8 */
+  
+  /* Border Colors */
+  --border: 30 41 59; /* #1E293B */
+  --border-secondary: 51 65 85; /* #334155 */
+}
+
+* {
+  border-color: rgb(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgba(255, 255, 255, 0.87);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
+  font-style: normal;
+  /* Performance optimizations */
+  will-change: auto;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Typography System */
+h1 {
+  font-size: 4rem; /* 64px */
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+}
+
+h4 {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+}
+
+h5 {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+}
+
+h6 {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.5;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.87);
+  margin: 0;
+}
+
+p {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem; /* 48px */
+  }
+
+  h2 {
+    font-size: 1.75rem; /* 28px */
+  }
+
+  h3 {
+    font-size: 1.25rem; /* 20px */
+  }
+}
+
+.glow-green {
+  box-shadow: 0 0 20px rgba(122, 229, 130, 0.3);
+}
+
+.glow-green-subtle {
+  box-shadow: 0 0 10px rgba(122, 229, 130, 0.15);
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, rgb(var(--green-light)), rgb(var(--green-medium)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.border-gradient-green {
+  border: 1px solid transparent;
+  background: linear-gradient(rgb(var(--background)), rgb(var(--background))) padding-box,
+              linear-gradient(135deg, rgb(var(--green-dark)), rgb(var(--green-medium))) border-box;
+}
+
+.card-luxury {
+  background-color: rgb(var(--background-secondary));
+  border: 1px solid rgb(var(--border));
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.card-luxury:hover {
+  border-color: rgb(var(--green-dark) / 0.5);
+  box-shadow: 0 0 10px rgba(122, 229, 130, 0.15);
+}
+
+/* Glass morphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(122, 229, 130, 0.2);
+}
+
+.glass-green {
+  background: rgba(122, 229, 130, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(122, 229, 130, 0.3);
+}
+
+/* Glass morphism with gradient glow borders */
+.glass-glow-green-primary {
+  border: 1px solid rgba(122, 229, 130, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(122, 229, 130, 0.2),
+    0 0 20px rgba(122, 229, 130, 0.15),
+    0 0 40px rgba(37, 161, 142, 0.1),
+    inset 0 0 60px rgba(122, 229, 130, 0.03);
+}
+
+.glass-glow-green-strong {
+  border: 1px solid rgba(122, 229, 130, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(122, 229, 130, 0.3),
+    0 0 15px rgba(122, 229, 130, 0.2),
+    0 0 30px rgba(37, 161, 142, 0.15);
+}
+
+.glass-glow-green {
+  border: 1px solid rgba(122, 229, 130, 0.4);
+  box-shadow:
+    0 0 0 1px rgba(122, 229, 130, 0.25),
+    0 0 12px rgba(122, 229, 130, 0.15),
+    0 0 25px rgba(37, 161, 142, 0.1);
+}
+
+.glass-glow-blue {
+  border: 1px solid rgba(0, 165, 207, 0.3);
+  box-shadow:
+    0 0 0 1px rgba(0, 165, 207, 0.2),
+    0 0 15px rgba(0, 165, 207, 0.15),
+    0 0 30px rgba(0, 78, 100, 0.1),
+    inset 0 0 40px rgba(0, 165, 207, 0.03);
+}
+
+.glass-glow-teal {
+  box-shadow:
+    0 0 0 1px rgba(37, 161, 142, 0.3),
+    0 0 10px rgba(37, 161, 142, 0.2),
+    inset 0 0 20px rgba(37, 161, 142, 0.05);
+}
+
+.glass-glow-cyan {
+  box-shadow:
+    0 0 0 1px rgba(0, 165, 207, 0.3),
+    0 0 12px rgba(0, 165, 207, 0.2),
+    inset 0 0 20px rgba(0, 165, 207, 0.05);
+}
+
+/* Cyberpunk glow effects */
+.cyber-glow {
+  box-shadow:
+    0 0 10px rgb(var(--green-medium) / 0.4),
+    0 0 20px rgb(var(--green-medium) / 0.2);
+}
+
+.cyber-border {
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, rgb(var(--background)), rgb(var(--background))) padding-box,
+              linear-gradient(135deg, rgb(var(--green-light)), rgb(var(--blue-light)), rgb(var(--green-medium))) border-box;
+}
+
+/* Animated gradient backgrounds */
+.gradient-animated {
+  background: linear-gradient(-45deg, 
+    rgb(var(--green-dark) / 0.3), 
+    rgb(var(--blue-medium) / 0.3), 
+    rgb(var(--green-medium) / 0.3), 
+    rgb(var(--blue-light) / 0.3)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* StarBorder animations */
+@keyframes star-movement-bottom {
+  0% { transform: translate(0%, 0%); opacity: 1; }
+  100% { transform: translate(-100%, 0%); opacity: 0; }
+}
+
+@keyframes star-movement-top {
+  0% { transform: translate(0%, 0%); opacity: 1; }
+  100% { transform: translate(100%, 0%); opacity: 0; }
+}
+
+.animate-star-movement-bottom {
+  animation: star-movement-bottom linear infinite alternate;
+}
+
+.animate-star-movement-top {
+  animation: star-movement-top linear infinite alternate;
+}
+
+/* ========================================
+   NEW TECHY ANIMATIONS
+   ======================================== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Gradient border animation */
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* Slow spin for orbital effects */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+/* Marquee animations for infinite scroll */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse linear infinite;
+}
+
+/* Pulse glow effect */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.5;
+    box-shadow: 0 0 20px rgba(122, 229, 130, 0.3);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 40px rgba(122, 229, 130, 0.5);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Shimmer effect for loading states */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--green-dark) / 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--green-medium) / 0.7);
+}
+
+/* Selection styling */
+::selection {
+  background: rgb(var(--green-medium) / 0.3);
+  color: rgb(var(--green-light));
+}
+
+/* Focus visible styling */
+:focus-visible {
+  outline: 2px solid rgb(var(--green-medium));
+  outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Hyperspeed background canvas fix */
+#lights {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+}
+
+#lights canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}

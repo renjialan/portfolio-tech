@@ -1,0 +1,41 @@
+{
+  "name": "funstuff",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/three": "^0.181.0",
+    "shadcn": "^3.5.1"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.4.2",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.556.0",
+    "mathjs": "^14.9.1",
+    "next": "^16.0.7",
+    "ogl": "^1.0.11",
+    "postprocessing": "^6.38.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "tailwind-merge": "^2.0.0",
+    "tailwindcss": "^4.1.17",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.167.1",
+    "typescript": "^5.9.3"
+  }
+}

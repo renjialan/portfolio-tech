@@ -1,0 +1,33 @@
+import { HeroPortfolio } from "@/components/sections/hero-portfolio"
+import { ExperienceSection } from "@/components/sections/experience"
+import { ProjectsSection } from "@/components/sections/projects"
+import { FunFactsSection } from "@/components/sections/fun-facts"
+import { SkillsSection } from "@/components/sections/skills"
+import { ContactSection } from "@/components/sections/contact"
+
+export default function HomePage() {
+  return (
+    <main className="min-h-screen bg-background text-text-primary antialiased selection:bg-green-medium/30 selection:text-green-light">
+      {/* Hero - Full viewport terminal intro */}
+      <HeroPortfolio />
+
+      {/* Content sections - seamless flow */}
+      <div className="relative">
+        {/* Experience - Bento grid */}
+        <ExperienceSection />
+
+        {/* Projects - 3D hover cards */}
+        <ProjectsSection />
+
+        {/* Fun Facts - Marquee + highlights */}
+        <FunFactsSection />
+
+        {/* Skills - Orbital visualization */}
+        <SkillsSection />
+
+        {/* Contact - Modern card */}
+        <ContactSection />
+      </div>
+    </main>
+  )
+}
