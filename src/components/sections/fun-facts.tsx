@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react"
 import { TechBackground } from "@/components/ui/tech-background"
-import GradualBlur from "@/components/GradualBlur"
 import {
   GraduationCap,
   Smartphone,
@@ -134,33 +133,33 @@ function HighlightCard({
 export function FunFactsSection() {
   const facts: Fact[] = [
     {
-      text: "Bachelor's in Info Sci (UX + Data Science) from UMich, graduating May 2025",
+      text: "B.S. Information Science with UX Design & Data Science concentrations",
       icon: <GraduationCap className="w-5 h-5" />,
       color: "blue"
     },
     {
-      text: "Grew a content account to 90k followers once (trying to do it again)",
-      icon: <Smartphone className="w-5 h-5" />,
+      text: "Advanced to YC's top 10% with an AI code search startup",
+      icon: <Rocket className="w-5 h-5" />,
       color: "green"
     },
     {
-      text: "\"Full-time vibe coder\" - I write code that works AND looks good",
+      text: "Bridge between engineering and product - I ship PRs, not just PRDs",
       icon: <Sparkles className="w-5 h-5" />,
       color: "teal"
     },
     {
-      text: "I debug LLMs the same way I debug relationships: with data and empathy",
+      text: "Built agentic AI chatbots, RAG systems, and LLM-powered products",
       icon: <Bot className="w-5 h-5" />,
       color: "blue"
     },
     {
-      text: "Fluent translator between \"engineer speak\" and \"normal human speak\"",
+      text: "Conducted 20+ customer interviews to drive product decisions",
       icon: <MessageCircle className="w-5 h-5" />,
       color: "green"
     },
     {
-      text: "Always trying to start the next thing (it's a problem, honestly)",
-      icon: <Rocket className="w-5 h-5" />,
+      text: "Grew content account to 90k followers - understand growth + virality",
+      icon: <Smartphone className="w-5 h-5" />,
       color: "teal"
     }
   ]
@@ -173,16 +172,6 @@ export function FunFactsSection() {
     <section className="relative py-24 md:py-32 overflow-hidden" id="about">
       <TechBackground variant="secondary" />
 
-      <GradualBlur
-        position="top"
-        height="12rem"
-        strength={3}
-        divCount={8}
-        curve="ease-out"
-        animated="scroll"
-        duration="0.8s"
-      />
-
       <div className="relative z-10">
         {/* Section Header */}
         <div className="max-w-6xl mx-auto px-6 mb-12 md:mb-16">
@@ -194,10 +183,10 @@ export function FunFactsSection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            <span className="text-gradient-green">Quick Facts</span>
+            <span className="text-gradient-green">About Me</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl">
-            Things worth knowing that may or may not be relevant to your hiring decision
+            Background and highlights that make me a strong AI Engineer + PM candidate.
           </p>
         </div>
 
@@ -207,13 +196,13 @@ export function FunFactsSection() {
             <HighlightCard
               icon={<GraduationCap className="w-full h-full" />}
               title="UMich '25"
-              subtitle="Information Science (UX + Data)"
+              subtitle="GPA 3.9 · Info Sci + UX + Data"
               color="blue"
             />
             <HighlightCard
-              icon={<Coffee className="w-full h-full" />}
-              title="Ship Daily"
-              subtitle="PRs > PRDs"
+              icon={<Rocket className="w-full h-full" />}
+              title="YC Top 10%"
+              subtitle="AI Startup Founder"
               color="green"
             />
           </div>
@@ -225,16 +214,6 @@ export function FunFactsSection() {
           <MarqueeRow facts={row2} reverse speed={40} />
         </div>
       </div>
-
-      <GradualBlur
-        position="bottom"
-        height="8rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        animated="scroll"
-        duration="0.8s"
-      />
     </section>
   )
 }

@@ -4,10 +4,14 @@ import { ProjectsSection } from "@/components/sections/projects"
 import { FunFactsSection } from "@/components/sections/fun-facts"
 import { SkillsSection } from "@/components/sections/skills"
 import { ContactSection } from "@/components/sections/contact"
+import { TestimonialsSection } from "@/components/sections/testimonials"
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-background text-text-primary antialiased selection:bg-green-medium/30 selection:text-green-light">
+    <main
+      id="main-content"
+      className="min-h-screen bg-background text-text-primary antialiased selection:bg-green-medium/30 selection:text-green-light"
+    >
       {/* Hero - Full viewport terminal intro */}
       <HeroPortfolio />
 
@@ -19,13 +23,16 @@ export default function HomePage() {
         {/* Projects - 3D hover cards */}
         <ProjectsSection />
 
+        {/* Testimonials - Social proof carousel */}
+        <TestimonialsSection />
+
         {/* Fun Facts - Marquee + highlights */}
         <FunFactsSection />
 
         {/* Skills - Orbital visualization */}
         <SkillsSection />
 
-        {/* Contact - Modern card */}
+        {/* Contact - Modern card with form */}
         <ContactSection />
       </div>
     </main>

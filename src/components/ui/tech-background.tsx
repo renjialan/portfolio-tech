@@ -13,21 +13,21 @@ export function TechBackground({ variant = "subtle", className = "" }: TechBackg
   const containerRef = useRef<HTMLDivElement>(null)
   const configs = {
     primary: {
-      color: "#7AE582", // green-medium
+      color: "#0a3d5c", // deep teal-blue (between blue-medium and blue-dark)
       speed: 5,
       scale: 1,
       noiseIntensity: 1.5,
       rotation: 0,
-      opacity: "opacity-60",
+      opacity: "opacity-70",
       mixBlendMode: "normal"
     },
     secondary: {
-      color: "#7AE582", // green-medium
+      color: "#004E64", // blue-medium (deep navy)
       speed: 2.5,
       scale: 0.3,
       noiseIntensity: 1.5,
       rotation: 3.14,
-      opacity: "opacity-20",
+      opacity: "opacity-25",
       mixBlendMode: "overlay"
     },
     subtle: {
@@ -40,7 +40,7 @@ export function TechBackground({ variant = "subtle", className = "" }: TechBackg
       mixBlendMode: "soft-light"
     },
     minimal: {
-      color: "#25A18E", // green-dark
+      color: "#0d4a6b", // muted deep blue
       speed: 1.5,
       scale: 0.3,
       noiseIntensity: 0.8,
@@ -49,7 +49,7 @@ export function TechBackground({ variant = "subtle", className = "" }: TechBackg
       mixBlendMode: "multiply"
     },
     accent: {
-      color: "#7AE582", // green-medium
+      color: "#25A18E", // teal-green for accent highlights
       speed: 4,
       scale: 0.3,
       noiseIntensity: 2.0,

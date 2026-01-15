@@ -2,7 +2,6 @@
 
 import { useRef, useState, useEffect } from "react"
 import { TechBackground } from "@/components/ui/tech-background"
-import GradualBlur from "@/components/GradualBlur"
 import { Briefcase, TrendingUp, Zap, Bug, Brain, Rocket } from "lucide-react"
 
 interface Experience {
@@ -216,55 +215,57 @@ function CompactCard({ experience }: { experience: Experience }) {
 export function ExperienceSection() {
   const experiences: Experience[] = [
     {
-      title: "caught a $50k bug nobody saw coming",
-      company: "Hewlett Packard Enterprise",
-      role: "AI Product Intern",
-      period: "Summer '25",
-      highlight: "Caught a $50k bug nobody saw coming",
+      title: "shipped feature that made $37k in 2 weeks",
+      company: "Sugarwish",
+      role: "Full Stack AI Product Builder",
+      period: "Sep '25 - Now",
+      highlight: "Shipped $37k feature in 2 weeks",
       achievements: [
-        "Built Python dashboards that caught a 23% accuracy drop in their agentic chatbot after a model update. Emergency rollback saved $50k in support costs.",
-        "67% of users rage-quit after 2 failed AI responses. Redesigned the conversation flow. Dropout dropped to 31% in 6 weeks."
+        "Increased new user activation by 20% through funnel analysis and targeted onboarding optimization",
+        "Established customer discovery process from support tickets + user interviews into roadmap priorities",
+        "Ship 5+ releases weekly with parallel dev workflow; built QA processes after production incident"
       ],
       stats: [
-        { value: "10", label: "Perf gap found" },
-        { value: "5", label: "Features shipped" },
+        { value: "37k", label: "Revenue in 2 wks" },
+        { value: "20%", label: "Activation boost" },
+        { value: "5+", label: "Weekly releases" }
+      ],
+      icon: <Brain className="w-5 h-5" />,
+      color: "green"
+    },
+    {
+      title: "redesigned agentic chatbot flow",
+      company: "Hewlett Packard Enterprise",
+      role: "AI PM Intern",
+      period: "Summer '25",
+      highlight: "32% LLM accuracy improvement",
+      achievements: [
+        "Wrote Python scripts analyzing 1,000+ Salesforce tickets → identified root causes → 5 features adopted into H2 roadmap",
+        "Conducted 20 customer interviews; redesigned prompt strategy improving CSAT by 10%, reducing unhelpful responses by 40%",
+        "Designed agentic chatbot troubleshoot flow through iterative A/B testing → 32% accuracy increase"
+      ],
+      stats: [
+        { value: "32%", label: "Accuracy boost" },
+        { value: "40%", label: "Less bad responses" },
         { value: "1000+", label: "Tickets analyzed" }
       ],
       icon: <Bug className="w-5 h-5" />,
       color: "blue"
     },
     {
-      title: "making ecommerce actually intelligent",
-      company: "Sugarwish",
-      role: "AI Product Builder",
-      period: "Fall '25 - Now",
-      highlight: "Making ecommerce actually intelligent",
-      achievements: [
-        "Talk to support teams every day - turn 'this is annoying' into PRDs - deploy fixes on AWS",
-        "Research emerging AI/ML tech, figure out what's hype vs. what actually works for B2B/B2C ecommerce"
-      ],
-      stats: [
-        { value: "100%", label: "Full-stack" },
-        { value: "0", label: "PRDs written" },
-        { value: "Daily", label: "Ship cadence" }
-      ],
-      icon: <Brain className="w-5 h-5" />,
-      color: "green"
-    },
-    {
-      title: "70% revenue growth in 3 months",
+      title: "data-driven product strategy at AI startup",
       company: "Devv AI",
       role: "Product Ops Intern",
-      period: "Fall '24",
-      highlight: "70% revenue growth in 3 months",
+      period: "Aug - Nov '24",
+      highlight: "8% MRR growth through user analysis",
       achievements: [
-        "Analyzed user behavior + competitor moves - data-driven product strategy - 70% MRR growth",
-        "Studied how devs actually search code (not how we thought they did) - redesigned agentic workflows - 30% more signups in 2 months"
+        "Developed data-driven product strategies through user behavior analysis → 8% MRR growth",
+        "Analyzed how power users structured multi-step agent tasks vs churned users → workflow templates increased signups 10%"
       ],
       stats: [
-        { value: "70%", label: "MRR Growth" },
-        { value: "30%", label: "More signups" },
-        { value: "2", label: "Months" }
+        { value: "8%", label: "MRR Growth" },
+        { value: "10%", label: "More signups" },
+        { value: "3", label: "Months" }
       ],
       icon: <Rocket className="w-5 h-5" />,
       color: "teal"
@@ -274,16 +275,6 @@ export function ExperienceSection() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden" id="work">
       <TechBackground variant="minimal" />
-
-      <GradualBlur
-        position="top"
-        height="12rem"
-        strength={3}
-        divCount={8}
-        curve="ease-out"
-        animated="scroll"
-        duration="0.8s"
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Section Header */}
@@ -296,10 +287,10 @@ export function ExperienceSection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            <span className="text-gradient-green">The Receipts</span>
+            <span className="text-gradient-green">Impact-Driven Work</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl">
-            Things I've actually shipped, with numbers because PMs love numbers.
+            AI products and features I've shipped with measurable business outcomes.
           </p>
         </div>
 
@@ -319,16 +310,6 @@ export function ExperienceSection() {
           </div>
         </div>
       </div>
-
-      <GradualBlur
-        position="bottom"
-        height="8rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        animated="scroll"
-        duration="0.8s"
-      />
     </section>
   )
 }

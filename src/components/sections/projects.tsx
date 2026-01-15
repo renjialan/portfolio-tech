@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react"
 import { TechBackground } from "@/components/ui/tech-background"
-import GradualBlur from "@/components/GradualBlur"
 import { Code2, Users, ArrowUpRight, GitBranch, Cpu, Network, Layers } from "lucide-react"
 
 interface Project {
@@ -164,30 +163,30 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 export function ProjectsSection() {
   const projects: Project[] = [
     {
-      title: "AI-powered code search that doesn't suck",
+      title: "RAG Code Search Engine → YC Top 10%",
       organization: "Ross Impact Studio Accelerator",
       role: "Founder",
-      description: "Built a RAG chatbot with dynamic chunking for searching large codebases. Because Cmd+F only gets you so far.",
+      description: "Observed pain point in searching large codebases. Built end-to-end RAG chatbot with dynamic document chunking strategies.",
       achievements: [
-        "42% faster queries with optimized vector search",
-        "75% success rate on multi-agent collaboration tasks",
-        "Graph-based workflow with LangChain"
+        "42% faster query resolution via optimized context window utilization",
+        "Advanced to Y Combinator's top 10% of applicants",
+        "Paused to gain industry experience before revisiting startup path"
       ],
-      tech: ["RAG", "LangChain", "Multi-Agent", "Python"],
+      tech: ["RAG", "LangChain", "LangGraph", "Python", "Vector DB"],
       icon: <Cpu className="w-8 h-8 text-white" />,
       gradient: "bg-gradient-to-br from-green-dark via-green-medium/50 to-blue-medium"
     },
     {
-      title: "Led product for 100-person dev org",
-      organization: "Void Tech",
+      title: "VP Product at 100-person Dev Org",
+      organization: "VOID Tech",
       role: "VP of Product Management",
-      description: "Transformed 'we build cool stuff' into 'we build stuff people want'. Metrics-first culture across 100 engineers.",
+      description: "Redefined product culture within student dev organization. Served as connective layer between clients, designers, and engineers.",
       achievements: [
-        "45% velocity improvement across teams",
-        "95% on-time delivery across 4 apps",
-        "Established 4-week sprint cycles"
+        "100% on-time delivery across 4 concurrent projects",
+        "45% velocity improvement with 4-week sprint cycles",
+        "Ran weekly syncs and demos coordinating cross-functional teams"
       ],
-      tech: ["Agile", "Metrics", "Team Leadership", "Strategy"],
+      tech: ["Agile", "Jira", "Cross-functional Leadership", "Roadmapping"],
       icon: <Network className="w-8 h-8 text-white" />,
       gradient: "bg-gradient-to-br from-blue-medium via-blue-light/50 to-green-dark"
     }
@@ -196,16 +195,6 @@ export function ProjectsSection() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden" id="projects">
       <TechBackground variant="accent" />
-
-      <GradualBlur
-        position="top"
-        height="12rem"
-        strength={3}
-        divCount={8}
-        curve="ease-out"
-        animated="scroll"
-        duration="0.8s"
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Section Header */}
@@ -218,10 +207,10 @@ export function ProjectsSection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            <span className="text-gradient-green">Built Because Bored</span>
+            <span className="text-gradient-green">Projects & Leadership</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl">
-            Side projects that should probably be startups (but I'm in college so... later)
+            Startup ventures and leadership roles where I drove product strategy and execution.
           </p>
         </div>
 
@@ -235,7 +224,7 @@ export function ProjectsSection() {
         {/* More projects hint */}
         <div className="mt-8 sm:mt-12 text-center">
           <a
-            href="https://github.com/yourprofile"
+            href="https://github.com/jialanren"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-4 py-3 rounded-xl text-sm text-text-muted font-mono hover:text-green-light hover:bg-green-dark/10 transition-all min-h-[44px]"
@@ -245,16 +234,6 @@ export function ProjectsSection() {
           </a>
         </div>
       </div>
-
-      <GradualBlur
-        position="bottom"
-        height="8rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        animated="scroll"
-        duration="0.8s"
-      />
     </section>
   )
 }

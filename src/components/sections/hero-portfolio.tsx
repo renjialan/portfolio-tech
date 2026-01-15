@@ -159,7 +159,10 @@ export function HeroPortfolio() {
                     <span className="bg-gradient-to-r from-[#4ecdc4] via-[#44a08d] to-[#093028] bg-clip-text text-transparent">Olive Ren</span>
                   </h1>
                   <p className="text-lg md:text-xl text-text-secondary">
-                    PM who codes <span className="text-text-muted">(badly)</span>
+                    AI Product Builder <span className="text-green-light">@ Full-Stack</span>
+                  </p>
+                  <p className="text-sm text-text-muted font-mono">
+                    UMich '25 · CS + UX · GPA 3.9
                   </p>
                 </div>
               }
@@ -168,13 +171,18 @@ export function HeroPortfolio() {
 
             {showSecondLine && (
               <TerminalLine
-                command="cat ./about.txt"
+                command="cat ./impact.txt"
                 delay={300}
                 output={
-                  <p className="text-sm md:text-base leading-relaxed max-w-2xl">
-                    I turn messy problems into shipped features. I define and ship Ecommerce products
-                    by contributing <span className="text-green-light">PRs</span>, not PRDs.
-                  </p>
+                  <div className="space-y-2">
+                    <p className="text-sm md:text-base leading-relaxed max-w-2xl">
+                      I ship AI products that drive revenue. Built features generating <span className="text-green-light font-semibold">$37k in 2 weeks</span>,
+                      improved <span className="text-green-light font-semibold">CSAT by 10%</span>, and increased <span className="text-green-light font-semibold">user activation by 20%</span>.
+                    </p>
+                    <p className="text-xs md:text-sm text-text-muted">
+                      Currently building agentic AI features at Sugarwish. Previously at HPE AI and Devv AI.
+                    </p>
+                  </div>
                 }
                 onComplete={() => setShowThirdLine(true)}
               />
@@ -183,11 +191,11 @@ export function HeroPortfolio() {
             {showThirdLine && (
               <TerminalLine
                 prefix="~"
-                command="echo $PHILOSOPHY"
+                command="echo $APPROACH"
                 delay={300}
                 output={
                   <p className="text-green-medium italic text-sm md:text-base">
-                    "Strong opinions, loosely held."
+                    "Ship fast, validate with data, iterate with users."
                   </p>
                 }
                 onComplete={() => setShowContent(true)}
@@ -203,8 +211,8 @@ export function HeroPortfolio() {
             {/* Social Links */}
             <div className="flex items-center gap-3 sm:gap-4">
               {[
-                { icon: Github, href: "https://github.com/yourprofile", label: "GitHub" },
-                { icon: Linkedin, href: "https://linkedin.com/in/yourprofile", label: "LinkedIn" },
+                { icon: Github, href: "https://github.com/jialanren", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/jialanren", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:oliveren@umich.edu", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <a

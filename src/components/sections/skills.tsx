@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from "react"
 import { TechBackground } from "@/components/ui/tech-background"
-import GradualBlur from "@/components/GradualBlur"
 import { Code2, Brain, BarChart3, Database, Terminal, Wrench } from "lucide-react"
 
 interface SkillCategory {
@@ -106,7 +105,7 @@ function SkillCategoryCard({ category, index }: { category: SkillCategory; index
 
 // Central skill hub visualization - Mobile simplified version
 function MobileSkillHub() {
-  const coreSkills = ["Ship Fast", "Data-Driven", "User-First", "Full-Stack"]
+  const coreSkills = ["AI/ML", "Full-Stack", "Product", "Data-Driven"]
 
   return (
     <div className="flex flex-wrap justify-center gap-2 py-6">
@@ -116,7 +115,7 @@ function MobileSkillHub() {
           <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
             <div className="text-center">
               <Terminal className="w-5 h-5 text-green-light mx-auto mb-1" />
-              <span className="text-[10px] font-mono text-text-muted">PM + DEV</span>
+              <span className="text-[10px] font-mono text-text-muted">AI + PM</span>
             </div>
           </div>
         </div>
@@ -140,7 +139,7 @@ function MobileSkillHub() {
 function SkillHub() {
   const [activeCategory, setActiveCategory] = useState<number | null>(null)
 
-  const coreSkills = ["Ship Fast", "Data-Driven", "User-First", "Full-Stack"]
+  const coreSkills = ["AI/ML", "Full-Stack", "Product", "Data-Driven"]
 
   return (
     <div className="relative flex items-center justify-center py-12">
@@ -155,7 +154,7 @@ function SkillHub() {
           <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
             <div className="text-center">
               <Terminal className="w-8 h-8 text-green-light mx-auto mb-2" />
-              <span className="text-xs font-mono text-text-muted">PM + DEV</span>
+              <span className="text-xs font-mono text-text-muted">AI + PM</span>
             </div>
           </div>
         </div>
@@ -194,25 +193,25 @@ export function SkillsSection() {
     {
       title: "I ship products with",
       icon: <Code2 className="w-5 h-5" />,
-      skills: ["Python", "React/Next.js", "TypeScript", "FastAPI", "PostgreSQL", "AWS", "Docker", "Vercel"],
+      skills: ["Python", "React", "Next.js", "TypeScript", "SQL", "AWS", "Docker", "GCP", "Vercel"],
       color: "green"
     },
     {
-      title: "I build AI/ML with",
+      title: "I build AI with",
       icon: <Brain className="w-5 h-5" />,
-      skills: ["LangChain", "LangGraph", "TensorFlow", "PyTorch", "Rasa", "RAG Systems", "Function Calling"],
+      skills: ["LangChain", "LangGraph", "RAG Systems", "Claude Code", "Streamlit", "Replit"],
       color: "blue"
     },
     {
       title: "I manage products with",
       icon: <BarChart3 className="w-5 h-5" />,
-      skills: ["Jira", "Linear", "Figma", "Mixpanel", "Google Analytics", "Salesforce", "User Interviews"],
+      skills: ["Jira", "Confluence", "Figma", "Mixpanel", "Google Analytics", "Salesforce", "Lark"],
       color: "green"
     },
     {
-      title: "Data infra I've touched",
+      title: "Data infra I've worked with",
       icon: <Database className="w-5 h-5" />,
-      skills: ["Snowflake", "Airflow", "Kafka", "Flink", "Kubernetes", "DataDog"],
+      skills: ["Airflow", "Kafka", "GitHub", "Google Workspace"],
       color: "blue"
     }
   ]
@@ -220,16 +219,6 @@ export function SkillsSection() {
   return (
     <section className="relative py-24 md:py-32 overflow-hidden" id="skills">
       <TechBackground variant="subtle" />
-
-      <GradualBlur
-        position="top"
-        height="12rem"
-        strength={3}
-        divCount={8}
-        curve="ease-out"
-        animated="scroll"
-        duration="0.8s"
-      />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         {/* Section Header */}
@@ -242,10 +231,10 @@ export function SkillsSection() {
           </div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-            <span className="text-gradient-green">The Toolkit</span>
+            <span className="text-gradient-green">Technical Skills</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            I actually know how to use these (not just copy-paste from Stack Overflow)
+            Full-stack development, AI/ML engineering, and product management tools I use daily.
           </p>
         </div>
 
@@ -266,16 +255,6 @@ export function SkillsSection() {
           ))}
         </div>
       </div>
-
-      <GradualBlur
-        position="bottom"
-        height="8rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        animated="scroll"
-        duration="0.8s"
-      />
     </section>
   )
 }
