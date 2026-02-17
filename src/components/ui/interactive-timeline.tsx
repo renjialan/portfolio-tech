@@ -16,48 +16,56 @@ const events: TimelineEvent[] = [
   {
     id: "1",
     year: "2025",
-    title: "Graduating from UMich",
-    description: "B.S. in Computer Science with 3.9 GPA",
-    company: "University of Michigan",
-    type: "education"
-  },
-  {
-    id: "2",
-    year: "2024",
     title: "Full Stack AI Product Builder",
-    description: "Built AI-powered gifting platform, $37k revenue",
+    description: "Built AI-powered gifting platform, $37k revenue in 2 weeks",
     company: "Sugarwish",
     type: "work"
   },
   {
-    id: "3",
-    year: "2024",
-    title: "YC Top 10%",
-    description: "RAG Code Search Engine recognized in YC batch",
-    type: "achievement"
-  },
-  {
-    id: "4",
-    year: "2023",
+    id: "2",
+    year: "2025",
     title: "AI PM Intern",
-    description: "Improved LLM accuracy by 32%",
+    description: "Redesigned LLM support agent — 25% effectiveness increase",
     company: "HPE",
     type: "work"
   },
   {
+    id: "3",
+    year: "2025",
+    title: "Graduating from UMich",
+    description: "B.S. in Information Science, UX Design & Data Science minors, 3.9 GPA",
+    company: "University of Michigan",
+    type: "education"
+  },
+  {
+    id: "4",
+    year: "2024-2025",
+    title: "Ross Impact Studio",
+    description: "YC Top 10% — RAG Code Search Engine",
+    type: "achievement"
+  },
+  {
     id: "5",
-    year: "2023",
-    title: "VP Product",
-    description: "Led 100-person dev organization",
-    company: "VOID Tech",
+    year: "2024",
+    title: "Product Ops Intern",
+    description: "35% query relevance improvement, 8% MRR growth",
+    company: "Devv AI",
     type: "work"
   },
   {
     id: "6",
-    year: "2022",
-    title: "Product Ops Intern",
-    description: "Drove 8% MRR growth",
-    company: "Devv AI",
+    year: "2024",
+    title: "Product Design Intern",
+    description: "50% DAU increase in 4 weeks",
+    company: "Readless LLC",
+    type: "work"
+  },
+  {
+    id: "7",
+    year: "2023",
+    title: "VP Product",
+    description: "Led 100-person dev organization",
+    company: "VOID Tech",
     type: "work"
   }
 ]

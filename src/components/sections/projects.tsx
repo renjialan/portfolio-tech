@@ -66,10 +66,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
+  const Wrapper = project.link ? 'a' : 'div'
+  const wrapperProps = project.link ? { href: project.link, target: '_blank', rel: 'noopener noreferrer' } : {}
+
   return (
-    <div
-      ref={ref}
-      className="group relative"
+    <Wrapper
+      {...wrapperProps}
+      ref={ref as React.Ref<HTMLDivElement & HTMLAnchorElement>}
+      className="group relative block"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -156,7 +160,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         </div>
       </div>
-    </div>
+    </Wrapper>
   )
 }
 
@@ -189,6 +193,21 @@ export function ProjectsSection() {
       tech: ["Agile", "Jira", "Cross-functional Leadership", "Roadmapping"],
       icon: <Network className="w-8 h-8 text-white" />,
       gradient: "bg-gradient-to-br from-blue-medium via-blue-light/50 to-green-dark"
+    },
+    {
+      title: "Ledgi — AI-Native Personal Finance",
+      organization: "Side Project",
+      role: "Solo Builder",
+      description: "Full-stack finance app that connects bank accounts via Teller, enriches transactions with Gemini Flash, and exposes data as an MCP server for any AI client.",
+      achievements: [
+        "Multi-stage AI enrichment pipeline: merchant resolution, categorization, anomaly detection",
+        "Agentic chat with Claude tool use for natural language financial queries",
+        "MCP server so users can query their finances from Claude Desktop, Cursor, or any client"
+      ],
+      tech: ["Next.js", "FastAPI", "PostgreSQL", "Claude", "Gemini", "MCP", "Teller API"],
+      icon: <Code2 className="w-8 h-8 text-white" />,
+      gradient: "bg-gradient-to-br from-emerald-600 via-cyan-500/50 to-green-dark",
+      link: "https://frontend-alpha-silk-14.vercel.app/landing"
     }
   ]
 

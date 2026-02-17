@@ -11,6 +11,7 @@ interface NavigationProps {
 const navLinks = [
   { href: "#work", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#showcase", label: "Showcase" },
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },

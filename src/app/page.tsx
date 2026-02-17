@@ -1,6 +1,7 @@
 import { HeroPortfolio } from "@/components/sections/hero-portfolio"
 import { ExperienceSection } from "@/components/sections/experience"
 import { ProjectsSection } from "@/components/sections/projects"
+import { ShowcaseSection } from "@/components/sections/showcase"
 import { FunFactsSection } from "@/components/sections/fun-facts"
 import { SkillsSection } from "@/components/sections/skills"
 import { ContactSection } from "@/components/sections/contact"
@@ -22,6 +23,9 @@ export default function HomePage() {
 
         {/* Projects - 3D hover cards */}
         <ProjectsSection />
+
+        {/* Showcase - Visual proof of work */}
+        <ShowcaseSection />
 
         {/* Testimonials - Social proof carousel */}
         <TestimonialsSection />

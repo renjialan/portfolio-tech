@@ -162,7 +162,7 @@ export function HeroPortfolio() {
                     AI Product Builder <span className="text-green-light">@ Full-Stack</span>
                   </p>
                   <p className="text-sm text-text-muted font-mono">
-                    UMich '25 · CS + UX · GPA 3.9
+                    UMich '25 · Info Sci + UX + Data Sci · GPA 3.9
                   </p>
                 </div>
               }
@@ -177,7 +177,7 @@ export function HeroPortfolio() {
                   <div className="space-y-2">
                     <p className="text-sm md:text-base leading-relaxed max-w-2xl">
                       I ship AI products that drive revenue. Built features generating <span className="text-green-light font-semibold">$37k in 2 weeks</span>,
-                      improved <span className="text-green-light font-semibold">CSAT by 10%</span>, and increased <span className="text-green-light font-semibold">user activation by 20%</span>.
+                      achieved a <span className="text-green-light font-semibold">35% conversion lift</span>, and reduced <span className="text-green-light font-semibold">infrastructure overhead by 36%</span>.
                     </p>
                     <p className="text-xs md:text-sm text-text-muted">
                       Currently building agentic AI features at Sugarwish. Previously at HPE AI and Devv AI.

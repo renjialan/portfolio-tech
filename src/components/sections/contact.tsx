@@ -214,7 +214,7 @@ export function ContactSection() {
             <ReducedMotionToggle />
           </div>
           <p className="text-[10px] sm:text-xs text-text-muted/60">
-            &copy; 2025 Jialan Ren · Available for opportunities starting May 2025
+            &copy; 2026 Jialan Ren · Currently building at Sugarwish
           </p>
           <p className="text-[10px] text-text-muted/40 mt-2">
             Hint: Try the Konami code ↑↑↓↓←→←→BA

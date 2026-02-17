@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { TechBackground } from "@/components/ui/tech-background"
-import { Briefcase, TrendingUp, Zap, Bug, Brain, Rocket } from "lucide-react"
+import { Briefcase, TrendingUp, Zap, Bug, Brain, Rocket, Smartphone } from "lucide-react"
 
 interface Experience {
   title: string
@@ -221,14 +221,14 @@ export function ExperienceSection() {
       period: "Sep '25 - Now",
       highlight: "Shipped $37k feature in 2 weeks",
       achievements: [
-        "Increased new user activation by 20% through funnel analysis and targeted onboarding optimization",
-        "Established customer discovery process from support tickets + user interviews into roadmap priorities",
-        "Ship 5+ releases weekly with parallel dev workflow; built QA processes after production incident"
+        "Built configurable quiz editor powering onboarding redesign — 35% conversion lift, 21% increase in same-day purchases",
+        "Shipped AI-powered upsell flow generating $37K revenue in first two weeks through rapid prototyping and A/B testing",
+        "Optimized multi-database platform reducing infrastructure overhead 36% while maintaining data consistency"
       ],
       stats: [
         { value: "37k", label: "Revenue in 2 wks" },
-        { value: "20%", label: "Activation boost" },
-        { value: "5+", label: "Weekly releases" }
+        { value: "35%", label: "Conversion lift" },
+        { value: "36%", label: "Infra reduction" }
       ],
       icon: <Brain className="w-5 h-5" />,
       color: "green"
@@ -238,15 +238,13 @@ export function ExperienceSection() {
       company: "Hewlett Packard Enterprise",
       role: "AI PM Intern",
       period: "Summer '25",
-      highlight: "32% LLM accuracy improvement",
+      highlight: "25% LLM effectiveness increase",
       achievements: [
-        "Wrote Python scripts analyzing 1,000+ Salesforce tickets → identified root causes → 5 features adopted into H2 roadmap",
-        "Conducted 20 customer interviews; redesigned prompt strategy improving CSAT by 10%, reducing unhelpful responses by 40%",
-        "Designed agentic chatbot troubleshoot flow through iterative A/B testing → 32% accuracy increase"
+        "Diagnosed and redesigned LLM-powered support agent — audited full RAG pipeline, 25% effectiveness increase, 24% reduction in unhelpful responses"
       ],
       stats: [
         { value: "32%", label: "Accuracy boost" },
-        { value: "40%", label: "Less bad responses" },
+        { value: "24%", label: "Less bad responses" },
         { value: "1000+", label: "Tickets analyzed" }
       ],
       icon: <Bug className="w-5 h-5" />,
@@ -257,17 +255,33 @@ export function ExperienceSection() {
       company: "Devv AI",
       role: "Product Ops Intern",
       period: "Aug - Nov '24",
-      highlight: "8% MRR growth through user analysis",
+      highlight: "35% query relevance improvement",
       achievements: [
-        "Developed data-driven product strategies through user behavior analysis → 8% MRR growth",
-        "Analyzed how power users structured multi-step agent tasks vs churned users → workflow templates increased signups 10%"
+        "Engineered human-in-the-loop evaluation pipeline and optimized hybrid retrieval — 35% query relevance improvement, 20% reduction in hallucinated code answers"
       ],
       stats: [
         { value: "8%", label: "MRR Growth" },
-        { value: "10%", label: "More signups" },
-        { value: "3", label: "Months" }
+        { value: "35%", label: "Query relevance" },
+        { value: "20%", label: "Less hallucination" }
       ],
       icon: <Rocket className="w-5 h-5" />,
+      color: "teal"
+    },
+    {
+      title: "redesigned mobile app features",
+      company: "Readless LLC",
+      role: "Product Design Intern",
+      period: "Summer '24",
+      highlight: "50% DAU increase in 4 weeks",
+      achievements: [
+        "Redesigned mobile app features in Figma, tracked post-launch analytics, iterated on designs"
+      ],
+      stats: [
+        { value: "50%", label: "DAU increase" },
+        { value: "4", label: "Weeks" },
+        { value: "3", label: "Features shipped" }
+      ],
+      icon: <Smartphone className="w-5 h-5" />,
       color: "teal"
     }
   ]
@@ -295,19 +309,24 @@ export function ExperienceSection() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 md:gap-6">
-          {/* Featured card - HPE - Takes full width on mobile, 2 cols on large screens */}
-          <div className="lg:col-span-2 lg:row-span-2">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6">
+          {/* Featured card - Sugarwish - Takes full width on mobile, 3 cols on large screens */}
+          <div className="lg:col-span-3 lg:row-span-2">
             <FeaturedCard experience={experiences[0]} index={0} />
           </div>
 
-          {/* Compact cards - Stack on mobile, side by side on tablet, column on large */}
-          <div className="lg:col-span-2">
+          {/* Compact cards - Stack on mobile, column on large screens */}
+          <div className="lg:col-span-3">
             <CompactCard experience={experiences[1]} />
           </div>
-          <div className="lg:col-span-2">
+          <div className="lg:col-span-3">
             <CompactCard experience={experiences[2]} />
           </div>
+        </div>
+
+        {/* Readless card - full width below */}
+        <div className="mt-4 md:mt-6">
+          <CompactCard experience={experiences[3]} />
         </div>
       </div>
     </section>
