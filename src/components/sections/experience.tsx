@@ -2,7 +2,8 @@
 
 import { useRef, useState, useEffect } from "react"
 import { TechBackground } from "@/components/ui/tech-background"
-import { Briefcase, TrendingUp, Zap, Bug, Brain, Rocket, Smartphone } from "lucide-react"
+import { Briefcase, TrendingUp, Zap, Bug, Brain, Rocket, Smartphone, ArrowUpRight } from "lucide-react"
+import Link from "next/link"
 
 interface Experience {
   title: string
@@ -56,7 +57,7 @@ function AnimatedNumber({ value, suffix = "" }: { value: string; suffix?: string
 }
 
 // Experience Card - Featured (large)
-function FeaturedCard({ experience, index }: { experience: Experience; index: number }) {
+function FeaturedCard({ experience, index, showLink }: { experience: Experience; index: number; showLink?: boolean }) {
   const [isHovered, setIsHovered] = useState(false)
 
   const colorStyles = {
@@ -107,9 +108,12 @@ function FeaturedCard({ experience, index }: { experience: Experience; index: nu
               <h3 className="text-base sm:text-lg md:text-xl font-medium text-text-primary truncate">{experience.company}</h3>
             </div>
           </div>
-          <span className={`self-start px-3 py-1 rounded-full text-xs font-mono ${styles.bg} ${styles.accent} whitespace-nowrap`}>
-            {experience.role}
-          </span>
+          <div className="flex items-center gap-2 self-start">
+            <span className={`px-3 py-1 rounded-full text-xs font-mono ${styles.bg} ${styles.accent} whitespace-nowrap`}>
+              {experience.role}
+            </span>
+            {showLink && <ArrowUpRight className={`w-4 h-4 ${styles.accent} opacity-60 group-hover:opacity-100 transition-opacity`} />}
+          </div>
         </div>
 
         {/* Title */}
@@ -311,9 +315,9 @@ export function ExperienceSection() {
         {/* Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 md:gap-6">
           {/* Featured card - Sugarwish - Takes full width on mobile, 3 cols on large screens */}
-          <div className="lg:col-span-3 lg:row-span-2">
-            <FeaturedCard experience={experiences[0]} index={0} />
-          </div>
+          <Link href="/sugarwish" className="lg:col-span-3 lg:row-span-2 block">
+            <FeaturedCard experience={experiences[0]} index={0} showLink />
+          </Link>
 
           {/* Compact cards - Stack on mobile, column on large screens */}
           <div className="lg:col-span-3">
